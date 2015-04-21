@@ -93,6 +93,7 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pdf-core (0.5.1)
+    pg (0.18.1)
     prawn (2.0.1)
       pdf-core (~> 0.5.1)
       ttfunk (~> 1.4.0)
@@ -184,6 +185,7 @@ DEPENDENCIES
   haml (~> 4.0.6)
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   prawn
   rails (= 4.2.0)
   sass-rails (~> 5.0)
