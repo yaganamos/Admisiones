@@ -1,7 +1,10 @@
-<h1>welcome to your dashboard</h1>
+<h3>Bienvenido a tu Cuenta</h3>
 
-<%= button_to "imprimir volante de inscription", :controller => :dashboard, :action => :show_pdf %>
-<%= button_to "consultar fecha cita", :controller => :adates, :action => :cita %>
+<p>imprime el volante de inscripcion, trae los papeles necesarios diligenciados y haz parte de nuestra familia</p>
+
+<%= button_to "imprime aqui el formulario de inscripcion", :controller => :dashboard, :action => :show_pdf %>
+<%= button_to "consulta aqui requisitos de admision", :controller => :dashboard, :action => :infor %>
+<%= button_to "consulta aqui la fecha de la cita", :controller => :adates, :action => :cita %>
 
 
 

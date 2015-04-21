@@ -6,6 +6,10 @@ class AdatesController < ApplicationController
 
 	end
 
+	def cita
+
+	end
+
 	def show
 
 	end

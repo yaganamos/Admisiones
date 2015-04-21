@@ -3,7 +3,10 @@ class DashboardController < ApplicationController
 	def index
 		
 	end
-	
+
+	def infor
+		
+	end
 
 	def show_pdf
       pdf_file = File.join(Rails.root, "app/views/dashboard/formulario_escolaridad.pdf")
