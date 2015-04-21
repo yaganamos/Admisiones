@@ -1,0 +1,8 @@
+<html>
+<head></head>
+<body>
+
+<%= select(:Adate, :date, Adate.all.collect {|p| [ p.date, p.hour ] }) %>
+
+</body>
+</html>

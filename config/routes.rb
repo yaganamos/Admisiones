@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  
+  #match '/dashboard/say', :controller => 'dashboard', :action => 'say'
+  match '/dashboard/show_pdf', :to => 'dashboard#show_pdf', :via => [:get, :post]
+  match '/adates/cita', :to => 'adates#cita', :via => [:get, :post]
+  match '/home/show', :to => 'home#show', :via => [:get, :post]
   resources :dashboard
+  resources :adates
+  
 
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -32,7 +39,7 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-  #   resources :products do
+  #   resources :produclts do
   #     resources :comments, :sales
   #     resource :seller
   #   end

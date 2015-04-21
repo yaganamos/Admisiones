@@ -2,20 +2,15 @@ class DashboardController < ApplicationController
 	before_filter :authenticate_user!
 	def index
 		
-
 	end
+	
 
-    def show
-        
-        respond_to do |format|
-			format.html
-			format.pdf do
-				render :pdf => "example.pdf",
-				:disposition => "inline",
-                :template => "dashboard/requisitos.html.erb"
-               
-
-            end
-        end
+	def show_pdf
+      pdf_file = File.join(Rails.root, "app/views/dashboard/formulario_escolaridad.pdf")
+      send_file(pdf_file, :filename => "formulario_escolaridad.pdf", :disposition => 'inline', :type => "application/pdf")
     end
+
+
+
+    
 end
