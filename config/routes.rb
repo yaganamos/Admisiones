@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #match '/dashboard/say', :controller => 'dashboard', :action => 'say'
   match '/dashboard/show_pdf', :to => 'dashboard#show_pdf', :via => [:get, :post]
   match '/dashboard/infor', :to => 'dashboard#infor', :via => [:get, :post]
-  match '/adates/cita', :to => 'adates#cita', :via => [:get, :post]
+  match '/adate/cita', :to => 'adate#cita', :via => [:get, :post]
   match '/home/show', :to => 'home#show', :via => [:get, :post]
   resources :dashboard
   resources :adates
