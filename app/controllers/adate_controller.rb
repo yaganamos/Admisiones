@@ -7,7 +7,11 @@ class AdateController < ApplicationController
 	end
 
 	def cita
-		@adate = Adate.create(date: "10", hour: "mil")
+		Adate.destroy_all
+		Adate.create(date: "27/04/15", hour: "12:00pm")
+		Adate.create(date: "28/04/15", hour: "12:20pm")
+		Adate.create(date: "29/04/15", hour: "12:00pm")
+		Adate.create(date: "30/04/15", hour: "12:20pm")
 
 	end
 

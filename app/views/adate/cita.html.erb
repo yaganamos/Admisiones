@@ -1,5 +1,15 @@
 <h3>fecha citacion disponible</h1>
 <p>consulte aqui la fecha de citacion disponible<p>
 
-<%= @adate.hour %>
-<%= @adate.date %>
+<table>
+<tr>
+<th>Date</th>
+<th>Hour</th>
+</tr>
+<% Adate.all.each do |adate| %>
+<tr>
+<td><%= adate.date %></td>
+<td><%= adate.hour %></td>
+</tr>
+<% end %>
+</table>
