@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   match '/home/show', :to => 'home#show', :via => [:get, :post]
   resources :dashboard
   resources :adates
+  resources :estudiantes
   
 
   root to: "home#index"

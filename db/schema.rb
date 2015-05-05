@@ -11,11 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421014737) do
+ActiveRecord::Schema.define(version: 20150505040336) do
 
   create_table "adates", force: :cascade do |t|
     t.text     "date"
     t.text     "hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estudiantes", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.integer  "documento"
+    t.string   "grado"
+    t.string   "sexo"
+    t.string   "division"
+    t.string   "estado"
+    t.integer  "rep_id"
+    t.integer  "mat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
