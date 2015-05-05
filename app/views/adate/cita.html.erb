@@ -6,10 +6,14 @@
 <th>Date</th>
 <th>Hour</th>
 </tr>
-<% Adate.all.each do |adate| %>
+<% dates = Adate.all %>
+<% dates.each do |adate| %>
 <tr>
 <td><%= adate.date %></td>
 <td><%= adate.hour %></td>
 </tr>
+<% end %>
+<% if dates.size == 0 %>
+<em>no Tweets found</em>
 <% end %>
 </table>
