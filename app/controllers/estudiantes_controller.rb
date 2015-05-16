@@ -2,6 +2,7 @@ class EstudiantesController < ApplicationController
   before_filter :authenticate_user!
   
   def show
+    @estudiante = Estudiante.find(params[:id])
   end
 
   def new
@@ -16,7 +17,7 @@ class EstudiantesController < ApplicationController
   end
 
   def find_estudiante
-    @estudiante = Estudiante.find(params[:id])
+    
   end
 
   private

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :dashboard
   resources :adates
   resources :estudiantes
+  resources :admission_requests
   
 
   root to: "home#index"

@@ -1,7 +1,6 @@
 class CreateEstudiantes < ActiveRecord::Migration
   def change
     create_table :estudiantes do |t|
-      t.integer :id
       t.string :nombre
       t.string :apellido
       t.integer :documento

@@ -1,0 +1,15 @@
+<%= link_to "Nueva Admision", new_admission_request_path %>
+
+<table> 
+  <thead> This is a table</thead>
+  <tbody>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <%- @requests.each do |request| %> 
+      <tr>
+        <td> <%= request.name %> </td>
+        <td> <%= request.last_name %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

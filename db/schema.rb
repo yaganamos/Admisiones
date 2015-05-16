@@ -11,11 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505040336) do
+ActiveRecord::Schema.define(version: 20150516040522) do
 
   create_table "adates", force: :cascade do |t|
     t.text     "date"
     t.text     "hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admission_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "last_name"
+    t.integer  "document"
+    t.integer  "grade"
+    t.string   "gender"
+    t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
