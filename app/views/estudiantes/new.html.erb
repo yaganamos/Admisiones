@@ -1,1 +1,14 @@
-lol
+<h1>estudiantes</h1>
+<%= simple_form_for @estudiante do |f| %>
+  <%= f.input :nombre %>
+  <%= f.input :apellido %>
+  <%= f.input :documento %>
+  <h4>grado:</h4>
+  <%= f.collection_radio_buttons :grado, [['primero', 'primero'] ,['segundo', 'segundo'],['tercero', 'tercero'],['cuarto', 'cuarto'],['quinto', 'quinto'],['sexto', 'sexto'],['septimo', 'septimo'],['octavo', 'octavo'],['noveno', 'noveno'],['decimo', 'decimo'],['undecimo', 'undecimo']], :first, :last %>
+  <h4>sexo:</h4>
+  <%= f.collection_radio_buttons :sexo, [['masculino', 'masculino'] ,['femenino', 'femenino']], :first, :last %>
+  <h4>division:</h4>
+  <%= f.collection_radio_buttons :division, [['primaria', 'primaria'] ,['secundaria', 'secundaria']], :first, :last %>
+  <%= f.button :submit %>
+  
+<% end %>

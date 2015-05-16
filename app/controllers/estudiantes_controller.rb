@@ -1,20 +1,28 @@
 class EstudiantesController < ApplicationController
-	def show
-	end
+  before_filter :authenticate_user!
+  
+  def show
+  end
 
-	def new
-		@estudiante = Estudiante.new
-		render action: 'new'
-	end
-	def create
+  def new
+    @estudiante = Estudiante.new
+    render action: 'new'
+  end
 
-		@estudiante = Estudiante.create(estudiate_params)
-	end
+  def create
+    Estudiante.destroy_all
+    @estudiante = Estudiante.create(estudiante_params)
+    render action: 'show'
+  end
 
-	def estudiante_params
-	params.require(:estudiante).permit(:nombre, :apellido, :documento, :grado, :sexo, :division)
-end
-def find_estudiante
-	@estudiante = Estudiante.find(params[:id])
-end
+  def find_estudiante
+    @estudiante = Estudiante.find(params[:id])
+  end
+
+  private
+
+  def estudiante_params
+    params.require(:estudiante).permit(:nombre, :apellido, :documento, :grado, :sexo, :division)
+  end
+
 end

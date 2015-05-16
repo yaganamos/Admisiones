@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   match '/dashboard/infor', :to => 'dashboard#infor', :via => [:get, :post]
   match '/adate/cita', :to => 'adate#cita', :via => [:get, :post]
   match '/home/show', :to => 'home#show', :via => [:get, :post]
+  match '/estudiantes/show', :to => 'estudiantes#show', :via => [:get, :post]
+  match '/estudiantes/new', :to => 'estudiantes#new', :via => [:get, :post]
   resources :dashboard
   resources :adates
   resources :estudiantes
