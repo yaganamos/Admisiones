@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'appointment/index'
+
+  get 'appointment/new'
+
+  get 'appointment/show'
+
   devise_for :users
 
   match '/dashboard/show_pdf', :to => 'dashboard#show_pdf', :via => [:get, :post]
