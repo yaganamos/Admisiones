@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdateTest < ActiveSupport::TestCase
+class AppointmentsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

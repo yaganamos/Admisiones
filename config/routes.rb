@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   match '/home/show', :to => 'home#show', :via => [:get, :post]
   match '/estudiantes/show', :to => 'estudiantes#show', :via => [:get, :post]
   match '/estudiantes/new', :to => 'estudiantes#new', :via => [:get, :post]
+  match '/appointments/index', :to => 'appointments#index', :via => [:get, :post]
   resources :dashboard
   resources :adates
   resources :estudiantes
   resources :admission_requests
+  resources :appointments
+  resources :appotimes
   
 
   root to: "home#index"

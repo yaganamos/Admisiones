@@ -11,19 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516040522) do
-
-  create_table "adates", force: :cascade do |t|
-    t.text     "date"
-    t.text     "hour"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20150526001234) do
 
   create_table "admission_requests", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "last_name"
+    t.string   "lastname"
     t.integer  "document"
     t.integer  "grade"
     t.string   "gender"
@@ -32,18 +25,19 @@ ActiveRecord::Schema.define(version: 20150516040522) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "estudiantes", force: :cascade do |t|
-    t.string   "nombre"
-    t.string   "apellido"
-    t.integer  "documento"
-    t.string   "grado"
-    t.string   "sexo"
-    t.string   "division"
-    t.string   "estado"
-    t.integer  "rep_id"
-    t.integer  "mat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "appointments", force: :cascade do |t|
+    t.integer  "admission_request_id"
+    t.string   "date"
+    t.string   "type"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "appotimes", force: :cascade do |t|
+    t.integer  "appointment_id"
+    t.string   "hour"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

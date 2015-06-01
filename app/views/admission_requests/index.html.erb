@@ -5,11 +5,25 @@
   <tbody>
     <th>Nombre</th>
     <th>Apellido</th>
-    <%- @requests.each do |request| %> 
+    <% @requests.each do |request| %> 
       <tr>
         <td> <%= request.name %> </td>
-        <td> <%= request.last_name %> </td>
+        <td> <%= request.lastname %> </td>
+        <td> <%= request.document %> </td>
+        <td> <%= request.grade %> </td>
+        <td> <%= request.gender %> </td>
+        <td> <%= request.status %> </td>
+        <td>Proceso siguiente: <% if request.status == "new" %>
+        <%= link_to "Nueva cita", new_appointment_path(ejea: request)%></td>
+        <% else %>
+       
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+
+
+

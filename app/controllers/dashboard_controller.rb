@@ -1,8 +1,7 @@
 class DashboardController < ApplicationController
 	before_filter :authenticate_user!
 	def index
-		@estudiante = current_user
-		
+		@requests = AdmissionRequest.where(user: current_user)
 	end
 
 	def infor

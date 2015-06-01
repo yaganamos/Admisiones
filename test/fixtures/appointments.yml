@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admission_request_id: 1
+  date: MyString
+  type: 
+
+two:
+  admission_request_id: 1
+  date: MyString
+  type: 

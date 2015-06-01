@@ -11,6 +11,7 @@ class AdmissionRequestsController < ApplicationController
 
   def create
     @request = AdmissionRequest.new(admission_params)
+    @request.status = "new"
     if @request.save
       redirect_to admission_requests_path
     else
@@ -21,6 +22,6 @@ class AdmissionRequestsController < ApplicationController
   private
 
   def admission_params
-    params.require(:admission_request).permit(:user_id,:name, :last_name, :document, :grade, :gender)
+    params.require(:admission_request).permit(:user_id,:name, :last_name, :document, :grade, :gender, :status)
   end
 end
