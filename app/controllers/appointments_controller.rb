@@ -14,6 +14,8 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
+      @appointment.admission_request.status = "cita pendiente"
+      @appointment.admission_request.save
       # @q = AdmissionRequest.find(@appointment.admission_request)
       redirect_to admission_requests_path
     else

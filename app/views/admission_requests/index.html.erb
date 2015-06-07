@@ -16,7 +16,9 @@
         <td>Proceso siguiente: <% if request.status == "new" %>
         <%= link_to "Nueva cita", new_admission_request_appointment_path(request)%></td>
         <% else %>
-       
+          <% if request.status == "cita pendiente" %>
+          <td> cita siguiente:  <%= request.appointment.date %> </td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>
