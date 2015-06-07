@@ -14,7 +14,7 @@
         <td> <%= request.gender %> </td>
         <td> <%= request.status %> </td>
         <td>Proceso siguiente: <% if request.status == "new" %>
-        <%= link_to "Nueva cita", new_appointment_path(ejea: request)%></td>
+        <%= link_to "Nueva cita", new_admission_request_appointment_path(request)%></td>
         <% else %>
        
         <% end %>

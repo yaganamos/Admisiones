@@ -1,6 +1,6 @@
 class AdmissionRequestsController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def new
     @request = AdmissionRequest.new(user: current_user)
   end

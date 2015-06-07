@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20150526001234) do
 
   create_table "appotimes", force: :cascade do |t|
     t.integer  "appointment_id"
-    t.string   "hour"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "appointment_date"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|

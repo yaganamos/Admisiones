@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   resources :admission_requests
   resources :appointments
   resources :appotimes
-  
+
+  resources :admission_requests do
+    resources :appointments
+  end
+
 
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

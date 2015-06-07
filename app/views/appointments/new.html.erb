@@ -1,8 +1,9 @@
 <h1>Nueva cita</h1>
-<% t = Appotime.all %>
 <%= @appointment.admission_request.name %>
 <%= simple_form_for @appointment do |f| %>
- <%= f.collection_select(:date, t,:id, :hour) %>
+  <%= f.hidden_field :admission_request_id %>
+ <%= f.collection_select(:date, @appotime,:appointment_date, :appointment_date) %>
+
   <%= f.button :submit %>
   
 <% end %>
