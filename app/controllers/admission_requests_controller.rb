@@ -22,6 +22,6 @@ class AdmissionRequestsController < ApplicationController
   private
 
   def admission_params
-    params.require(:admission_request).permit(:user_id,:name, :last_name, :document, :grade, :gender, :status)
+    params.require(:admission_request).permit(:user_id,:name, :lastname, :document, :grade, :gender, :status)
   end
 end
