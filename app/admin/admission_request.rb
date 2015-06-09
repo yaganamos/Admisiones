@@ -1,9 +1,9 @@
-ActiveAdmin.register Appotime do
+ActiveAdmin.register AdmissionRequest do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :appointment_type, :appointment_date
+permit_params :status
 #
 # or
 #

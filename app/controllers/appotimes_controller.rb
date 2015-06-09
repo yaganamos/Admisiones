@@ -16,7 +16,7 @@ end
  end
 
  def appotime_params
-    params.require(:appotime).permit(:appointment_date)
+    params.require(:appotime).permit(:appointment_date, :appointment_type)
   end
 
 end

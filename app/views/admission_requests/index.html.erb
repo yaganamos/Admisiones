@@ -16,8 +16,37 @@
         <td>Proceso siguiente: <% if request.status == "new" %>
         <%= link_to "Nueva cita", new_admission_request_appointment_path(request)%></td>
         <% else %>
-          <% if request.status == "cita pendiente" %>
+        <% if request.status == "cita pendiente" %>
           <td> cita siguiente:  <%= request.appointment.date %> </td>
+          <% else %>
+              <% if request.status == "inscrito" %>
+                <%= link_to "Nueva cita, prueba de admision", new_admission_request_appointment_path(request)%>
+                <% else %>
+        <% if request.status == "prueba pendiente" %>
+          <td> cita siguiente:  <%= request.appointment.date %> </td>
+                 <% else %>
+              <% if request.status == "admitido" %>
+                <%= link_to "Nueva cita, entrevista familiar", new_admission_request_appointment_path(request)%>
+                <% else %>
+        <% if request.status == "entrevista pendiente" %>
+          <td> entrevista siguiente:  <%= request.appointment.date %> </td>
+          <% else %>
+              <% if request.status == "matricula pendiente" %>
+                <%= link_to "Nueva cita, matricula", new_admission_request_appointment_path(request)%>
+                <% else %>
+        <% if request.status == "oficializacion pendiente" %>
+          <td> cita matricula siguiente:  <%= request.appointment.date %> </td>
+          <td> <%= button_to "recibo de matricula", :controller => :dashboard, :action => :show_pdf %></td>
+          <% else %>
+        <% if request.status == "matriculado" %>
+          <td>  <%= request.name %>  esta oficialmente matriculado</td>
+                                <% end %>
+                             <% end %>
+                          <% end %>
+                      <% end %>
+                   <% end %>
+                <% end %>
+              <% end %>
           <% end %>
         <% end %>
       </tr>
