@@ -1,19 +1,35 @@
-<%= link_to "Nueva Admision", new_admission_request_path %>
-
-<table> 
-  <thead> This is a table</thead>
+<%- model_class = AdmissionRequest -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<%= link_to "Nueva Admision", new_admission_request_path,
+            :class => 'btn btn-primary' %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:lastname) %></th>
+      <th><%= model_class.human_attribute_name(:document) %></th>
+      <th><%= model_class.human_attribute_name(:grade) %></th>
+      <th><%= model_class.human_attribute_name(:gender) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:next_step) %></th>
+    </tr>
+  </thead>
   <tbody>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <% @requests.each do |request| %> 
+    <% @requests.each do |request| %>
       <tr>
-        <td> <%= request.name %> </td>
-        <td> <%= request.lastname %> </td>
-        <td> <%= request.document %> </td>
-        <td> <%= request.grade %> </td>
-        <td> <%= request.gender %> </td>
-        <td> <%= request.status %> </td>
-        <td>Proceso siguiente: <% if request.status == "new" %>
+        <td><%= link_to request.id, admission_request_path(request) %></td>
+        <td><%= request.user_id %></td>
+        <td><%= request.name %></td>
+        <td><%= request.lastname %></td>
+        <td><%= request.document %></td>
+        <td><%= request.grade %></td>
+        <td><%= request.gender %></td>
+        <td><%= request.status %></td>
+        <td><% if request.status == "new" %>
         <%= link_to "Nueva cita", new_admission_request_appointment_path(request)%></td>
         <% else %>
         <% if request.status == "cita pendiente" %>
@@ -53,20 +69,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<table> 
-  <thead> This is another table</thead>
-  <tbody>
-    <th>Imprime aqui el formulario de inscripcion</th>
-      <tr>
-        <td> <%= button_to "formulario de inscripcion", :controller => :dashboard, :action => :show_pdf %> </td>
-      </tr>
-  </tbody>
-</table>
-
-
-
-
 

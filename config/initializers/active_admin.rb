@@ -105,7 +105,6 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.logout_link_method = :get
-
   # == Root
   #
   # Set the action to call for the root path. You can set different
@@ -131,7 +130,7 @@ ActiveAdmin.setup do |config|
   #
   # Enable and disable Batch Actions
   #
-  config.batch_actions = true
+  config.batch_actions = false
 
   # == Controller Filters
   #
