@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 gem 'devise'
-
+ruby "2.2.1"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'twitter-bootstrap-rails'
 gem "therubyracer"
 gem "less-rails"
-
+gem 'rails_12factor', group: :production
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
   gem 'wkhtmltopdf-binary'
