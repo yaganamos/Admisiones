@@ -17,7 +17,7 @@ actions :all, :except => [:new]
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :status, :name
+permit_params :status, :name, :grade
 index do
 	column :user_id
     column :name

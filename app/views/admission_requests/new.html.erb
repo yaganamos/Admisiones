@@ -1,13 +1,31 @@
-<%= simple_form_for @request do |f| %>
+<section class="bg-primary" id="about">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-offset-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                        <h2 class="section-heading">Nueva Admision</h2>
+                        <%= simple_form_for @request do |f| %>
   <%= f.hidden_field :user_id %>
   <%= f.input :name, label: "Nombre" %>
   <%= f.input :lastname, label: "Apellido"  %>
   <%= f.input :document, label: "Documento"  %>
-  <h4>grado:</h4>
-  <%= f.collection_radio_buttons :grade, [['1', 'primero'] ,['2', 'segundo'],['3', 'tercero'],['4', 'cuarto'],['5', 'quinto'],['6', 'sexto'],['7', 'septimo'],['8', 'octavo'],['9', 'noveno'],['10', 'decimo'],['11', 'undecimo']], :first, :last %>
+  <h4>Grado:</h4>
+  <%= f.collection_radio_buttons :grade, [['1', 'primero'] ,['2', 'segundo'],['3', 'tercero'],['4', 'cuarto'],['5', 'quinto'],['6', 'sexto'],['7', 'septimo'],['8', 'octavo'],['9', 'noveno'],['10', 'decimo'],['11', 'undecimo']], :first, :last, :class => "radio" %>
   <h4>sexo:</h4>
   <%= f.collection_radio_buttons :gender, [['masculino', 'masculino'] ,['femenino', 'femenino']], :first, :last %>
-  <%= f.button :submit %>
+  <%= f.button :submit, "Enviar"%>
   
 <% end %>
 <%= link_to "Atras", admission_requests_path %>
+                    </div>
+                </div>
+               
+                
+               
+
+            </div>
+        </div>
+</section>
+

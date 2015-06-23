@@ -1,9 +1,13 @@
-<%- model_class = AdmissionRequest -%>
+<section  id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <hr class="light">
+                    <%- model_class = AdmissionRequest -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
 </div>
-<%= link_to "Nueva Admision", new_admission_request_path,
-            :class => 'btn btn-primary' %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -29,7 +33,8 @@
         <td><%= request.grade %></td>
         <td><%= request.gender %></td>
         <td><%= request.status %></td>
-        <td><% if request.status == "new" %>
+        <% if request.status == "new" %>
+        <td>
         <%= link_to "Nueva cita", new_admission_request_appointment_path(request)%></td>
         <% else %>
         <% if request.status == "cita pendiente" %>
@@ -52,7 +57,7 @@
                 <% else %>
         <% if request.status == "oficializacion pendiente" %>
           <td> cita matricula siguiente:  <%= request.appointment.date %> </td>
-          <td> <%= button_to "recibo de matricula", :controller => :dashboard, :action => :show_pdf %></td>
+          <td> <%= link_to "recibo de matricula", dashboard_show_pdf_path, :class => 'btn btn-primary' %></td>
           <% else %>
         <% if request.status == "matriculado" %>
           <td>  <%= request.name %>  esta oficialmente matriculado</td>
@@ -69,4 +74,12 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to "Nueva Admision", new_admission_request_path,
+            :class => 'btn btn-primary' %>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
 

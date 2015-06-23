@@ -7,12 +7,18 @@
     <title><%= content_for?(:title) ? yield(:title) : "Projecto" %></title>
     <%= csrf_meta_tags %>
 
+    
+    
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    
+
+    <link rel="stylesheet" href="assets/stylesheets/creative.css.scss" type="text/css">
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -33,13 +39,67 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+    <style type="text/css">
+      .img-rounded{
+        width: 100px;
+      }
 
-    <%= javascript_include_tag "application" %>
+      #about{
+        display: block;
+      }
+
+      /*.navbar{
+        background: blue !important;
+      }*/
+    </style>
+    
+    
   </head>
-  <body>
+  <body id="page-top">
+          
+          <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+            </div>
 
-    <div class="navbar navbar-default navbar-static-top">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <ul class="nav navbar-nav">
+                        <% if user_signed_in? %>
+                          <li><a><%= current_user.email %></a></li>
+                          <li><%= link_to "Salir", destroy_user_session_path, :method => :delete%></li>
+                        <% else %>
+                        <li><%= link_to "Crear cuenta", new_user_registration_path %></li> 
+                        <li><%= link_to "Iniciar sesion", new_user_session_path %></li>
+                        <% end %>
+                    </ul>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+     
+
+
+
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
+      <div class = "row">
+         <div class ="col-md-1s"> 
+           <%= image_tag "logo.png", :alt => "Google +", :title => "Google +", :class =>"img-rounded"%>
+         </div>
+         </div>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -48,65 +108,31 @@
         <a class="navbar-brand" href="#">Projecto</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><% if user_signed_in? %>
-Signed in as <%= current_user.email %>. not you?
-<%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>
-<% else %>
-<li><%= link_to "Crear cuenta", new_user_registration_path %></li> 
-<li><%= link_to "Iniciar sesion", new_user_session_path %></li>
-<% end %>
+            
           </ul>
         </div>
       </div>
-    </div>
+    </div>-->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
+    
+
+    <!-- Content Section -->
+
+   
+    
+
+    <%= yield %>
+    
+
+
+      <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h6>Proyecto de Grado 2015</h6>
+               
+            </div>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3> Descripción detallada:</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header"> COLEGIO EXTERNADO DE COLOMBIA</li>
-      
-
-<li>Estado: ANTIGUO-ACTIVO</li>
-<li>Tipo: INSTITUCIÓN EDUCATIVA</li>
-<li>Calendario: A</li>
-<li>Sector: NO OFICIAL</li>
-<li>Zona EE: URBANA</li>
-<li>Estrato: ESTRATO 2</li>
-<li>Jornada: COMPLETA</li>
-<li>Género: MIXTO</li>
-<li>Carácter: ACADÉMICO</li>
-<li>Matrícula Contratada: NO</li>
-<li>Especialidad:</li>
-<li>Clases de Especialidades Académicas</li>
-<br>
-<li>Niveles, Grados:</li>
-<li>Preescolares</li>
-<li>Kinders</li>
-<li>Transición</li>
-<li>Pre Jardines Infantiles</li>
-<li>Primaria</li>
-<li>Secundaria</li>
-<br>
-<li>Direcciones y formas de contactarse:</li>
-<li>DIRECCIÓN: CR 35B # 100-180, ATLÁNTICO, BARRANQUILLA.</li>
-<li>BARRIO: LAS ESTRELLAS</li>
-<li>TELÉFONO: 3808217</li>
-<li>MAIL / CORREO ELECTRÓNICO: luzelenalopera@yahoo.es</li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <footer>
-        <p>Proyecto de Grado 2015</p>
-      </footer>
+    </aside>
 
     </div> <!-- /container -->
 

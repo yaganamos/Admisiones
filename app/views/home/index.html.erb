@@ -1,10 +1,11 @@
-<h1>Bienvenido a nuestra pagina</h1>
-<h2>Colegio Externado de Colombia</h2>
-<p>PREESCOLAR,BÁSICA SECUNDARIA,BÁSICA PRIMARIA,MEDIA VOCACIONAL</p>
-<ul>
-<li><%= button_to "Proceso de Matricula", :controller => :home, :action => :show,
-            :class => 'btn btn-primary' %></li>
-
-<li><%= button_to "requisitos de admision", :controller => :dashboard, :action => :infor,
-            :class => 'btn btn-primary'  %></li>
-</ul>
+<header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Colegio Externado De Colombia</h1>
+                <hr>
+                <p>Pre-escolar, Basica Primaria, Basica Secundaria, Media Vocacional</p>
+                <%= link_to "Proceso de Matricula", home_show_path , :class => "btn btn-primary btn-xl"%>
+            <%= link_to "requisitos de admision", dashboard_infor_path, :class => 'btn btn-primary btn-xl'  %>
+            </div>
+        </div>
+    </header>

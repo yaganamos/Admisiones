@@ -1,13 +1,32 @@
-<h1>Nueva cita</h1>
-<%= @appointment.admission_request.name %>
+<section class="bg-primary" id="about">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-offset-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                        <h2 class="section-heading">Nueva Cita</h2>
+                        <%= @appointment.admission_request.name %>
 <%= simple_form_for @appointment do |f| %>
   <%= f.hidden_field :admission_request_id %>
- <%= f.collection_select(:date, @appotime,:appointment_date, :appointment_date) %>
+ <%= f.collection_select(:date, @appotime,:appointment_date, :appointment_date, :class=>"Select") %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, "Asignar Cita"%>
   
 <% end %>
 <%= link_to "Atras", admission_requests_path %>
+                        
+                    </div>
+                </div>
+               
+                
+               
+
+            </div>
+        </div>
+</section>
+
+
 
 
 
